@@ -1,0 +1,273 @@
+/*
+ * CSS reset
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html {
+    -webkit-text-size-adjust: none;
+}
+body {
+    line-height: 1.5;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+
+    &:before {
+        content: "";
+        content: none;
+    }
+    &:after {
+        content: "";
+        content: none;
+    }
+}
+body {
+    font-family: "microsoft yahei";
+    font-weight: normal;
+    background-color: #ffffff;
+    color: #555;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+    text-decoration: none;
+    outline: none;
+    color: #232323;
+}
+/*
+ * fight 
+ */
+$Width : 1200px;
+
+body {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	min-width: 1024px;
+	#game_box{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: - $Width / 2;
+		margin-top: - $Width / 4;
+		width: $Width;
+		height: $Width / 2;
+		overflow: hidden;
+	}
+}
+/*
+ *card panel
+ */
+.card_panel{
+	position: relative;
+	height: 10%;
+	background: pink;
+	.card_hold{
+		position: absolute;
+		left: 50%;
+		margin-left: -15%;
+		height: 100%;
+		width: 30%;
+		background: lightgreen;
+	}
+	.crystal{
+		position: absolute;
+		right: 5%;
+		height: 100%;
+		width: 25%;
+		.crystal_total{
+			position: absolute;
+			top: 25%;
+			width: 100%;
+			height: 50%;
+		}
+		.crystal_use{
+			position: absolute;
+			top: 25%;
+			width: 100%;
+			height: 50%;
+			background: grey;
+		}
+		.crystal_overplus{
+			position: absolute;
+			top: 25%;
+			width: 60%;
+			height: 50%;
+			background: lightblue;
+		}
+	}
+}
+/*user panel*/
+.user_panel{
+	height: 20%;
+	display: flex;
+	clear: both;
+	.activity{
+		flex: 3;
+		background: #333;
+	}
+	.hero{
+		background: lightyellow;
+		height: 100%;
+		flex: 3;
+		display: flex;
+		.weapon{
+			flex: 1;
+			height: 100%;
+			.weapon_box{
+				position: relative;
+				left: 20px;
+				top: 20px;
+				width: $Width / 13;
+				height: $Width / 13;
+				border-radius: 50%;
+				background:red;
+				.weapon_attack{
+					position: absolute;
+					bottom: 0;
+					width: 30%;
+					height: 30%;
+					background: #999;
+				}
+				.weapon_armour{
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					width: 30%;
+					height: 30%;
+					background: #999;
+				}
+			}
+		}
+		.person{
+			position: relative;
+			flex: 1;
+			height: 100%;
+			border-top-left-radius: 40%;
+			border-top-right-radius: 40%;
+			background: lightblue;
+			.person_attack{
+				position: absolute;
+				bottom: 0;
+				width: 20%;
+				height: 20%;
+				background: yellow;
+			}
+			.person_armour{
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 20%;
+				height: 20%;
+				background: yellow;
+			}
+		}
+		.skill{
+			flex: 1;
+			height: 100%;
+			.skill_box{
+				position: relative;
+				left: 20px;
+				top: 20px;
+				width: $Width / 13;
+				height: $Width / 13;
+				border-radius: 50%;
+				background: blue;
+				.skill_pay{
+					position: absolute;
+					top: 0;
+					left: 35%;
+					width: 30%;
+					height: 30%;
+					background: #999;
+				}
+			}
+		}
+	}
+}
+/*battlefield panel*/
+#battlefield{
+	height: 40%;
+	display: flex;
+	background: gray;
+	#record{
+		flex: 1;
+		background: lightyellow;
+	}
+	#card_box{
+		height: 100%;
+		flex: 6;
+		background: lightgreen;
+		.card_area{
+			width:100%;
+			height: 50%;
+			text-align: center;
+			.pack{
+				position: relative;
+				width: 100px;
+				height: 120px;
+				display: inline-block;
+				.card{
+					position: absolute;
+					top: 6px;
+					left: 15px;
+					width:70%;
+					height: 90%;
+					background: orange;
+					border-top-right-radius: 40%;
+					border-top-left-radius: 40%;
+					border-bottom-right-radius: 40%;
+					border-bottom-left-radius: 40%;
+				}
+			}
+		}
+	}
+	#cardLib{
+		flex: 1;
+		background: lightblue;
+	}
+}
+/*my card*/
+#mycard{
+	.mycard{
+		position: relative;
+		.handcard{
+			position: absolute;
+			top: -50%;
+			left: 35%;
+			width: 30%;
+			height: 500%;
+			border: 1px solid #000;
+			background: orange;
+			transform-origin: center bottom;
+		}
+		@for $i from 1 to 11{
+			.card_#{$i} {
+				z-index: $i*100;
+				transform:rotate(-30deg + $i*6deg);
+				&:hover{
+					z-index: 2000;
+					transform: rotate(0deg) scale(2,2) translate(0, 60px);
+					left: $i*10% - 10%;
+				}
+			}
+		}
+	}
+}
