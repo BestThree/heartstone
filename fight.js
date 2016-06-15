@@ -1,3 +1,8 @@
+//手牌类
+
+
+
+
 var all_cards = new Array(), //所有卡牌
     my,
     en,
